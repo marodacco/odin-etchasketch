@@ -3,18 +3,23 @@
   padding: 0;
 }
 
+body {
+  text-align: center;
+}
+
 #container {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .row {
   display: flex;
+  justify-content: center;
 }
 
 .box {
   width: 20px;
   height: 20px;
   background-color: paleturquoise;
-  border: solid 1px grey;
 }
