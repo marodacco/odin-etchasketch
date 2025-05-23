@@ -21,4 +21,5 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   background-color: paleturquoise;
+  flex-shrink: 0;
 }
