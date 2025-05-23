@@ -20,7 +20,6 @@ const button = document.querySelector("button");
 // Set the button to change the number of boxes
 button.addEventListener("click", () => {
   const userNumber = prompt("The number of squares per side: (maxmum of 100)");
-  console.log(userNumber);
 
   //Check if it's below 100
   // Check if it's empty or not a number
@@ -46,10 +45,19 @@ function createBoxes(num) {
     // Set box width and height
     box.style.width = boxesWidth / num + "px";
     box.style.height = boxesWidth / num + "px";
+    // Set opacity
+    box.style.opacity = 0.1;
 
     // Add event listner
     box.addEventListener("mouseenter", () => {
-    box.style.backgroundColor = "green";
+      // Random colour
+      var randomColor = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+      box.style.backgroundColor = randomColor;
+      
+      // Increase opacity
+      const currentOpacity = box.style.opacity;
+      const newOpacity = Number(currentOpacity) + 0.1;
+      box.style.opacity = newOpacity;
     });
     
     boxes.appendChild(box);
