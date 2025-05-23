@@ -19,17 +19,23 @@ const button = document.querySelector("button");
 
 // Set the button to change the number of boxes
 button.addEventListener("click", () => {
-  const userNumber = prompt("the number of squares per side:");
+  const userNumber = prompt("The number of squares per side: (maxmum of 100)");
   console.log(userNumber);
 
-  // Remove the current boxes
-  const oldBoxes = document.querySelectorAll("#boxes div");
-  oldBoxes.forEach((oldBox) => {
-    boxes.removeChild(oldBox);
-  });
+  //Check if it's below 100
+  // Check if it's empty or not a number
+  if (userNumber > 100 || isNaN(userNumber) || !userNumber) {
+    alert("Please enter a number less than or equal to 100");
+  } else {
+    // Remove the current boxes
+    const oldBoxes = document.querySelectorAll("#boxes div");
+    oldBoxes.forEach((oldBox) => {
+      boxes.removeChild(oldBox);
+    });
 
-  // Create new boxes
-  createBoxes(userNumber);
+    // Create new boxes
+    createBoxes(userNumber);
+  }
 });
 
 // Create boxes
